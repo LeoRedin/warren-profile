@@ -1,22 +1,13 @@
-import React from 'react'
+import React, {Suspense} from 'react'
+import {RingLoader} from 'react-spinners'
+
+import {Welcome} from 'views'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<RingLoader loading />}>
+      <Welcome />
+    </Suspense>
   )
 }
 

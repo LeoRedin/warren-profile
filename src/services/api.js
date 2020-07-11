@@ -32,16 +32,14 @@ function wrapPromise(promise) {
   }
 }
 
-function fetchMessage() {
-  return api.post('/')
+function fetchMessage(context) {
+  return api.post('/', {...context})
 }
 
-export function fetchMessageData() {
-  const messagePromise = fetchMessage()
+export function fetchMessageData(context) {
+  const messagePromise = fetchMessage(context)
 
   return {
     message: wrapPromise(messagePromise),
   }
 }
-
-export default api
