@@ -23,11 +23,7 @@ export function Message({message, done}) {
   const handleDone = () => done(true)
 
   return (
-    <Typist
-      avgTypingDelay={50}
-      cursor={{show: false}}
-      onTypingDone={handleDone}
-    >
+    <Typist avgTypingDelay={0} cursor={{show: false}} onTypingDone={handleDone}>
       {returnValues.map((value, index) =>
         typeof value === 'number' ? (
           <Typist.Delay ms={value} key={value + index} />
