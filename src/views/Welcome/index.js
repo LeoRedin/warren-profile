@@ -5,7 +5,6 @@ import {Message} from 'components'
 import {fetchMessageData} from 'services/api'
 
 const context = {
-  context: 'suitability',
   id: null,
   answers: {},
 }
