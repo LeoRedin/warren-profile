@@ -1,8 +1,7 @@
 import React from 'react'
 import Typist from 'react-typist'
 
-export function Message({message}) {
-  console.log('Message -> message', message)
+export function Message({message, done}) {
   const returnValues = []
 
   message.map(({value}) => {
@@ -21,11 +20,13 @@ export function Message({message}) {
     })
   })
 
+  const handleDone = () => done(true)
+
   return (
     <Typist
       avgTypingDelay={50}
       cursor={{show: false}}
-      onTypingDone={() => console.log('done')}
+      onTypingDone={handleDone}
     >
       {returnValues.map((value, index) =>
         typeof value === 'number' ? (

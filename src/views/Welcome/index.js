@@ -13,9 +13,15 @@ const context = {
 const resource = fetchMessageData(context)
 
 export function Welcome() {
+  const [done, setDone] = React.useState(false)
   const {
     data: {messages},
   } = resource.message.read()
 
-  return <Message message={messages} />
+  return (
+    <>
+      <Message message={messages} done={setDone} />
+      {done && <div>DONE</div>}
+    </>
+  )
 }
