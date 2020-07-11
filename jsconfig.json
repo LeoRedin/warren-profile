@@ -6,7 +6,8 @@
       "components": ["src/components/*"],
       "views": ["src/views/*"],
       "variables": ["src/variables/*"],
-      "store": ["src/store/store.js"]
+      "store": ["src/store/*"],
+      "styles": ["src/styles/*"]
     }
   }
 }
