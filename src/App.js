@@ -1,5 +1,4 @@
-import React, {Suspense} from 'react'
-import {RingLoader} from 'react-spinners'
+import React from 'react'
 
 import {StateProvider} from 'store/store'
 
@@ -11,9 +10,7 @@ import 'styles/global.css'
 function App() {
   return (
     <StateProvider>
-      <Suspense fallback={<RingLoader loading />}>
-        <Welcome />
-      </Suspense>
+      <Welcome />
     </StateProvider>
   )
 }
