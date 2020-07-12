@@ -9,7 +9,7 @@ export function Message({message, done}) {
 
     return split.map(item => {
       const hasNumber = item.match(/(\d+)/)
-      if (hasNumber) {
+      if (hasNumber && +hasNumber[0] > 100) {
         const delay = hasNumber[0]
         const cleanItem = item.replace(delay, '')
         returnValues.push(+delay)
