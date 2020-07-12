@@ -11,11 +11,15 @@ const StateProvider = ({children}) => {
     switch (action.type) {
       case 'update-answers':
         return {
-          ...reducerState,
-          ...action.payload,
+          answers: {
+            ...reducerState.answers,
+            ...action.payload,
+          },
         }
       default:
-        throw new Error()
+        return {
+          ...reducerState,
+        }
     }
   }, initialState)
 
