@@ -13,8 +13,9 @@ const StateProvider = ({children}) => {
         return {
           answers: {
             ...reducerState.answers,
-            ...action.payload,
+            ...action.payload.answer,
           },
+          id: action.payload.id,
         }
       default:
         return {

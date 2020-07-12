@@ -30,7 +30,7 @@ export function Welcome({next}) {
 
     dispatch({
       type: 'update-answers',
-      payload: {...payload},
+      payload: {answer: {...payload}, id: messageId},
     })
     next()
   }
@@ -57,7 +57,7 @@ export function Welcome({next}) {
         <form noValidate autoComplete="off" onSubmit={handleSubmit}>
           <TextField
             fullWidth
-            id="namename"
+            id="name"
             label="Nome"
             value={name}
             onChange={handleChange}

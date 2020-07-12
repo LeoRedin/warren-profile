@@ -44,7 +44,8 @@
       "no-console": "off",
       "jsx-a11y/accessible-emoji": "off",
       "consistent-return": "off",
-      "jsx-a11y/autocomplete-valid": "off"
+      "jsx-a11y/autocomplete-valid": "off",
+      "react-hooks/exhaustive-deps": "off"
     },
     "settings": {
       "import/resolver": {
