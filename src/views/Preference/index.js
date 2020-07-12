@@ -45,7 +45,7 @@ export function Preference({next}) {
     fetchData()
 
     return () => fetchData()
-  }, [state])
+  }, [])
 
   if (!messages) return null
 

@@ -49,7 +49,7 @@ export function Age({next}) {
     fetchData()
 
     return () => fetchData()
-  }, [state])
+  }, [])
 
   if (!messages) return null
 
