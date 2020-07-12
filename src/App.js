@@ -2,7 +2,7 @@ import React from 'react'
 
 import {StateProvider} from 'store/store'
 
-import {Welcome, Age, Interest, Preference} from 'views'
+import {Welcome, Age, Interest, Preference, Income} from 'views'
 
 import 'styles/normalize.css'
 import 'styles/global.css'
@@ -18,6 +18,7 @@ function App() {
       {step >= 1 && <Age next={handleNext} />}
       {step >= 2 && <Interest next={handleNext} />}
       {step >= 3 && <Preference next={handleNext} />}
+      {step >= 4 && <Income next={handleNext} />}
     </StateProvider>
   )
 }
