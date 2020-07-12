@@ -1,5 +1,4 @@
 import React from 'react'
-import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
 import {Message} from 'components'
@@ -8,23 +7,20 @@ import {store} from 'store/store'
 
 import {fetchMessages} from 'services/api'
 
-export function Age({next}) {
+export function Interest({next}) {
   const [done, setDone] = React.useState(false)
-  const [age, setAge] = React.useState('')
+
+  const [option, setOption] = React.useState('')
   const [messages, setMessages] = React.useState(null)
   const [messageId, setMessageId] = React.useState(null)
 
   const {state, dispatch} = React.useContext(store)
 
-  const handleChange = event => {
-    setAge(event.target.value)
-  }
-
   const handleSubmit = event => {
     event.preventDefault()
 
     const payload = {}
-    payload[messageId] = +age
+    payload[messageId] = option
 
     dispatch({
       type: 'update-answers',
@@ -58,15 +54,21 @@ export function Age({next}) {
       <Message message={messages} done={setDone} />
       {done && (
         <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-          <TextField
-            fullWidth
-            id="age"
-            label="Idade"
-            value={age}
-            onChange={handleChange}
-          />
-          <Button type="submit" variant="contained" color="primary">
-            Enviar
+          <Button
+            onClick={() => setOption('P')}
+            type="submit"
+            variant="contained"
+            color="primary"
+          >
+            Nem me fale
+          </Button>
+          <Button
+            onClick={() => setOption('A')}
+            type="submit"
+            variant="contained"
+            color="primary"
+          >
+            Eu gosto disso!
           </Button>
         </form>
       )}
